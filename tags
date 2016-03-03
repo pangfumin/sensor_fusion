@@ -1,0 +1,172 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CALCQ_H_	ssf_core/src/calcQ.h	33;"	d
+CallbackType	ssf_core/include/ssf_core/SSF_Core.h	/^  typedef boost::function<void(ssf_core::SSF_CoreConfig& config, uint32_t level)> CallbackType;$/;"	t	class:ssf_core::SSF_Core
+Config	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::Config(ssf_core::SSF_CoreConfig& config, uint32_t level)$/;"	f	class:ssf_core::SSF_Core
+Config	ssf_core/src/measurement.cpp	/^void Measurements::Config(ssf_core::SSF_CoreConfig& config, uint32_t level){$/;"	f	class:ssf_core::Measurements
+DynConfig	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::DynConfig(ssf_core::SSF_CoreConfig& config, uint32_t level)$/;"	f	class:ssf_core::SSF_Core
+EIGEN_CONVERSIONS_H_	ssf_core/include/ssf_core/eigen_conversions.h	33;"	d
+EIGEN_UTILS_H_	ssf_core/include/ssf_core/eigen_utils.h	33;"	d
+ErrorState	ssf_core/include/ssf_core/SSF_Core.h	/^  typedef Eigen::Matrix<double, N_STATE, 1> ErrorState;$/;"	t	class:ssf_core::SSF_Core
+ErrorStateCov	ssf_core/include/ssf_core/SSF_Core.h	/^  typedef Eigen::Matrix<double, N_STATE, N_STATE> ErrorStateCov;$/;"	t	class:ssf_core::SSF_Core
+FUZZY_UP	ssf_core/include/ssf_core/SSF_Core.h	/^    NO_UP, GOOD_UP, FUZZY_UP$/;"	e	enum:ssf_core::SSF_Core::__anon1
+Fd_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, N_STATE, N_STATE> Fd_; \/\/\/< discrete state propagation matrix$/;"	m	class:ssf_core::SSF_Core
+GOOD_UP	ssf_core/include/ssf_core/SSF_Core.h	/^    NO_UP, GOOD_UP, FUZZY_UP$/;"	e	enum:ssf_core::SSF_Core::__anon1
+HLI_EKF_STATE_SIZE	ssf_core/include/ssf_core/SSF_Core.h	53;"	d
+Handlers	ssf_core/include/ssf_core/measurement.h	/^	typedef std::vector<MeasurementHandler*> Handlers;$/;"	t	class:ssf_core::Measurements
+INIT_FILTER	ssf_core/cfg/SSF_Core.cfg	/^INIT_FILTER     = gen.const("INIT_FILTER",              int_t, 0x00000001, "init_filter")$/;"	v
+L_	ssf_core/include/ssf_core/state.h	/^  double L_;                              \/\/\/< visual scale                     (16 \/ 15)$/;"	m	class:ssf_core::State
+MEASUREMENT_H	ssf_core/include/ssf_core/measurement.h	33;"	d
+MISC	ssf_core/cfg/SSF_Core.cfg	/^MISC            = gen.const("MISC",                     int_t, 0x00000002, "misc")$/;"	v
+MeasurementHandler	ssf_core/include/ssf_core/measurement.h	/^	MeasurementHandler(Measurements* meas):measurements(meas){}$/;"	f	class:ssf_core::MeasurementHandler
+MeasurementHandler	ssf_core/include/ssf_core/measurement.h	/^class MeasurementHandler$/;"	c	namespace:ssf_core
+Measurements	ssf_core/include/ssf_core/measurement.h	/^class Measurements$/;"	c	namespace:ssf_core
+Measurements	ssf_core/src/measurement.cpp	/^Measurements::Measurements()$/;"	f	class:ssf_core::Measurements
+NO_UP	ssf_core/include/ssf_core/SSF_Core.h	/^    NO_UP, GOOD_UP, FUZZY_UP$/;"	e	enum:ssf_core::SSF_Core::__anon1
+N_MEAS	ssf_updates/src/pose_sensor.cpp	36;"	d	file:
+N_MEAS	ssf_updates/src/position_sensor.cpp	35;"	d	file:
+N_STATE	ssf_core/include/ssf_core/state.h	43;"	d
+N_STATE_BUFFER	ssf_core/include/ssf_core/SSF_Core.h	52;"	d
+PACKAGE	ssf_core/cfg/SSF_Core.cfg	/^PACKAGE='ssf_core'$/;"	v
+POSE_MEASUREMENTS_H	ssf_updates/src/pose_measurements.h	33;"	d
+POSE_SENSOR_H	ssf_updates/src/pose_sensor.h	33;"	d
+POSITION_MEASUREMENTS_H	ssf_updates/src/position_measurements.h	33;"	d
+POSITION_SENSOR_H	ssf_updates/src/position_sensor.h	33;"	d
+P_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, N_STATE, N_STATE> P_;\/\/\/< error state covariance$/;"	m	class:ssf_core::State
+PoseMeasurements	ssf_updates/src/pose_measurements.h	/^  PoseMeasurements()$/;"	f	class:PoseMeasurements
+PoseMeasurements	ssf_updates/src/pose_measurements.h	/^class PoseMeasurements : public ssf_core::Measurements$/;"	c
+PoseSensorHandler	ssf_updates/src/pose_sensor.cpp	/^PoseSensorHandler::PoseSensorHandler(ssf_core::Measurements* meas) :$/;"	f	class:PoseSensorHandler
+PoseSensorHandler	ssf_updates/src/pose_sensor.h	/^class PoseSensorHandler : public ssf_core::MeasurementHandler$/;"	c
+PositionMeasurements	ssf_updates/src/position_measurements.h	/^	PositionMeasurements()$/;"	f	class:PositionMeasurements
+PositionMeasurements	ssf_updates/src/position_measurements.h	/^class PositionMeasurements: public ssf_core::Measurements$/;"	c
+PositionSensorHandler	ssf_updates/src/position_sensor.cpp	/^PositionSensorHandler::PositionSensorHandler(ssf_core::Measurements* meas) :$/;"	f	class:PositionSensorHandler
+PositionSensorHandler	ssf_updates/src/position_sensor.h	/^class PositionSensorHandler: public ssf_core::MeasurementHandler$/;"	c
+Qd_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, N_STATE, N_STATE> Qd_; \/\/\/< discrete propagation noise matrix$/;"	m	class:ssf_core::SSF_Core
+QualityThres_	ssf_core/include/ssf_core/SSF_Core.h	/^  const static int QualityThres_ = 1e3;$/;"	m	class:ssf_core::SSF_Core
+R_CI_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, 3, 3> R_CI_; \/\/\/< Rot Camera->IMU$/;"	m	class:ssf_core::SSF_Core
+R_IW_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, 3, 3> R_IW_; \/\/\/< Rot IMU->World$/;"	m	class:ssf_core::SSF_Core
+R_WV_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, 3, 3> R_WV_; \/\/\/< Rot World->Vision$/;"	m	class:ssf_core::SSF_Core
+ReconfigureServer	ssf_core/include/ssf_core/SSF_Core.h	/^typedef dynamic_reconfigure::Server<ssf_core::SSF_CoreConfig> ReconfigureServer;$/;"	t	namespace:ssf_core
+SET_HEIGHT	ssf_core/cfg/SSF_Core.cfg	/^SET_HEIGHT      = gen.const("SET_HEIGHT",              int_t, 0x00000004, "set_height")$/;"	v
+SSF_CORE_H_	ssf_core/include/ssf_core/SSF_Core.h	33;"	d
+SSF_Core	ssf_core/include/ssf_core/SSF_Core.h	/^class SSF_Core$/;"	c	namespace:ssf_core
+SSF_Core	ssf_core/src/SSF_Core.cpp	/^SSF_Core::SSF_Core()$/;"	f	class:ssf_core::SSF_Core
+STATE_H_	ssf_core/include/ssf_core/state.h	33;"	d
+State	ssf_core/include/ssf_core/state.h	/^class State$/;"	c	namespace:ssf_core
+StateBuffer_	ssf_core/include/ssf_core/SSF_Core.h	/^  State StateBuffer_[N_STATE_BUFFER]; \/\/\/< EKF ringbuffer containing pretty much all info needed at time t$/;"	m	class:ssf_core::SSF_Core
+a_m_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double,3,1> a_m_;         \/\/\/< acceleration from IMU$/;"	m	class:ssf_core::State
+addHandler	ssf_core/include/ssf_core/measurement.h	/^	void addHandler(MeasurementHandler* handler)$/;"	f	class:ssf_core::Measurements
+applyCorrection	ssf_core/src/SSF_Core.cpp	/^bool SSF_Core::applyCorrection(unsigned char idx_delaystate, const ErrorState & res_delayed, double fuzzythres)$/;"	f	class:ssf_core::SSF_Core
+applyMeasurement	ssf_core/include/ssf_core/SSF_Core.h	/^    bool applyMeasurement(unsigned char idx_delaystate, const Eigen::MatrixBase<H_type>& H_delayed,$/;"	f	class:ssf_core::SSF_Core
+b_a_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, 3, 1> b_a_;       \/\/\/< acceleration biases              (13-15 \/ 12-14)$/;"	m	class:ssf_core::State
+b_w_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, 3, 1> b_w_;       \/\/\/< gyro biases                      (10-12 \/ 9-11)$/;"	m	class:ssf_core::State
+calc_Q	ssf_core/src/calcQ.h	/^template <class Derived, class DerivedQ> void calc_Q($/;"	f
+callbacks_	ssf_core/include/ssf_core/SSF_Core.h	/^  std::vector<CallbackType> callbacks_;$/;"	m	class:ssf_core::SSF_Core
+checkForNumeric	ssf_core/include/ssf_core/eigen_utils.h	/^  bool checkForNumeric(const T & vec, int size, const std::string & info)$/;"	f
+config_	ssf_core/include/ssf_core/SSF_Core.h	/^  ssf_core::SSF_CoreConfig config_;$/;"	m	class:ssf_core::SSF_Core
+correction_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, N_STATE, 1> correction_;$/;"	m	class:ssf_core::SSF_Core
+data_playback_	ssf_core/include/ssf_core/SSF_Core.h	/^  bool data_playback_;$/;"	m	class:ssf_core::SSF_Core
+eigen_conversions	ssf_core/include/ssf_core/eigen_conversions.h	/^namespace eigen_conversions$/;"	n
+g_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, 3, 1> g_; \/\/\/< gravity vector$/;"	m	class:ssf_core::SSF_Core
+gen	ssf_core/cfg/SSF_Core.cfg	/^gen = ParameterGenerator()$/;"	v
+getClosestState	ssf_core/src/SSF_Core.cpp	/^unsigned char SSF_Core::getClosestState(State* timestate, ros::Time tstamp, double delay)$/;"	f	class:ssf_core::SSF_Core
+getMedian	ssf_core/src/SSF_Core.cpp	/^double SSF_Core::getMedian(const Eigen::Matrix<double, nBuff_, 1> & data)$/;"	f	class:ssf_core::SSF_Core
+getPoseCovariance	ssf_core/src/state.cpp	/^void State::getPoseCovariance(geometry_msgs::PoseWithCovariance::_covariance_type & cov)$/;"	f	class:ssf_core::State
+getStateAtIdx	ssf_core/src/SSF_Core.cpp	/^bool SSF_Core::getStateAtIdx(State* timestate, unsigned char idx)$/;"	f	class:ssf_core::SSF_Core
+handlers	ssf_core/include/ssf_core/measurement.h	/^	Handlers handlers;$/;"	m	class:ssf_core::Measurements
+hl_state_buf_	ssf_core/include/ssf_core/SSF_Core.h	/^  sensor_fusion_comm::ExtEkf hl_state_buf_; \/\/\/< buffer to store external propagation data$/;"	m	class:ssf_core::SSF_Core
+idx_P_	ssf_core/include/ssf_core/SSF_Core.h	/^  unsigned char idx_P_; \/\/\/< pointer to state buffer at P latest propagated$/;"	m	class:ssf_core::SSF_Core
+idx_state_	ssf_core/include/ssf_core/SSF_Core.h	/^  unsigned char idx_state_; \/\/\/< pointer to state buffer at most recent state$/;"	m	class:ssf_core::SSF_Core
+idx_time_	ssf_core/include/ssf_core/SSF_Core.h	/^  unsigned char idx_time_; \/\/\/< pointer to state buffer at a specific time$/;"	m	class:ssf_core::SSF_Core
+imuCallback	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::imuCallback(const sensor_msgs::ImuConstPtr & msg)$/;"	f	class:ssf_core::SSF_Core
+init	ssf_updates/src/pose_measurements.h	/^  void init(double scale)$/;"	f	class:PoseMeasurements
+init	ssf_updates/src/position_measurements.h	/^	void init(double scale)$/;"	f	class:PositionMeasurements
+initialize	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::initialize(const Eigen::Matrix<double, 3, 1> & p, const Eigen::Matrix<double, 3, 1> & v,$/;"	f	class:ssf_core::SSF_Core
+initialized_	ssf_core/include/ssf_core/SSF_Core.h	/^  bool initialized_;$/;"	m	class:ssf_core::SSF_Core
+main	ssf_updates/src/main.cpp	/^int main(int argc, char** argv)$/;"	f
+measurementCallback	ssf_updates/src/pose_sensor.cpp	/^void PoseSensorHandler::measurementCallback(const geometry_msgs::TransformStampedConstPtr & msg)$/;"	f	class:PoseSensorHandler
+measurementCallback	ssf_updates/src/position_sensor.cpp	/^void PositionSensorHandler::measurementCallback(const ssf_updates::PositionWithCovarianceStampedConstPtr & msg)$/;"	f	class:PositionSensorHandler
+measurement_world_sensor_	ssf_updates/src/pose_sensor.h	/^  bool measurement_world_sensor_; \/\/\/< defines if the pose of the sensor is measured in world coordinates (true, default) or vice versa (false, e.g. PTAM)$/;"	m	class:PoseSensorHandler
+measurement_world_sensor_	ssf_updates/src/position_sensor.h	/^	bool measurement_world_sensor_; \/\/\/< defines if the pose of the sensor is measured in world coordinates (true, default) or vice versa (false, e.g. PTAM)$/;"	m	class:PositionSensorHandler
+measurements	ssf_core/include/ssf_core/measurement.h	/^	Measurements* measurements;$/;"	m	class:ssf_core::MeasurementHandler
+msgCorrect_	ssf_core/include/ssf_core/SSF_Core.h	/^  sensor_fusion_comm::ExtEkf msgCorrect_;$/;"	m	class:ssf_core::SSF_Core
+msgPoseCtrl_	ssf_core/include/ssf_core/SSF_Core.h	/^  sensor_fusion_comm::ExtState msgPoseCtrl_;$/;"	m	class:ssf_core::SSF_Core
+msgPose_	ssf_core/include/ssf_core/SSF_Core.h	/^  geometry_msgs::PoseWithCovarianceStamped msgPose_;$/;"	m	class:ssf_core::SSF_Core
+msgState_	ssf_core/include/ssf_core/SSF_Core.h	/^  sensor_fusion_comm::DoubleArrayStamped msgState_;$/;"	m	class:ssf_core::SSF_Core
+nBuff_	ssf_core/include/ssf_core/SSF_Core.h	/^  const static int nBuff_ = 30; \/\/\/< buffer size for median q_vw$/;"	m	class:ssf_core::SSF_Core
+nFullState_	ssf_core/include/ssf_core/SSF_Core.h	/^  const static int nFullState_ = 28; \/\/\/< complete state$/;"	m	class:ssf_core::SSF_Core
+nMaxCorr_	ssf_core/include/ssf_core/SSF_Core.h	/^  const static int nMaxCorr_ = 50; \/\/\/< number of IMU measurements buffered for time correction actions$/;"	m	class:ssf_core::SSF_Core
+n_zp_	ssf_updates/src/pose_sensor.h	/^  double n_zp_, n_zq_; \/\/\/ position and attitude measurement noise$/;"	m	class:PoseSensorHandler
+n_zp_	ssf_updates/src/position_sensor.h	/^	double n_zp_ \/*, n_zq_*\/; \/\/\/ position and attitude measurement noise - here we do not have an attitude measurement$/;"	m	class:PositionSensorHandler
+n_zq_	ssf_updates/src/pose_sensor.h	/^  double n_zp_, n_zq_; \/\/\/ position and attitude measurement noise$/;"	m	class:PoseSensorHandler
+noiseConfig	ssf_updates/src/pose_sensor.cpp	/^void PoseSensorHandler::noiseConfig(ssf_core::SSF_CoreConfig& config, uint32_t level)$/;"	f	class:PoseSensorHandler
+noiseConfig	ssf_updates/src/position_sensor.cpp	/^void PositionSensorHandler::noiseConfig(ssf_core::SSF_CoreConfig& config, uint32_t level)$/;"	f	class:PositionSensorHandler
+omegaMatHamilton	ssf_core/include/ssf_core/eigen_utils.h	/^  inline Eigen::Matrix<typename Derived::Scalar, 4, 4> omegaMatHamilton(const Eigen::MatrixBase<Derived> & vec)$/;"	f
+omegaMatJPL	ssf_core/include/ssf_core/eigen_utils.h	/^  inline Eigen::Matrix<typename Derived::Scalar, 4, 4> omegaMatJPL(const Eigen::MatrixBase<Derived> & vec)$/;"	f
+p_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, 3, 1> p_;         \/\/\/< position (IMU centered)          (0-2 \/ 0-2)$/;"	m	class:ssf_core::State
+p_ci_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, 3, 1> p_ci_;      \/\/\/< camera-imu position calibration  (25-27 \/ 22-24)$/;"	m	class:ssf_core::State
+p_ci_	ssf_updates/src/pose_measurements.h	/^  Eigen::Matrix<double, 3, 1> p_ci_; \/\/\/< initial distance camera-IMU$/;"	m	class:PoseMeasurements
+p_ci_	ssf_updates/src/position_measurements.h	/^	  Eigen::Matrix<double, 3, 1> p_ci_; \/\/\/< initial distance camera-IMU$/;"	m	class:PositionMeasurements
+p_vc_	ssf_core/include/ssf_core/measurement.h	/^	Eigen::Matrix<double, 3, 1> p_vc_;$/;"	m	class:ssf_core::Measurements
+predictProcessCovariance	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::predictProcessCovariance(const double dt)$/;"	f	class:ssf_core::SSF_Core
+predictionMade_	ssf_core/include/ssf_core/SSF_Core.h	/^  bool predictionMade_;$/;"	m	class:ssf_core::SSF_Core
+propPToIdx	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::propPToIdx(unsigned char idx)$/;"	f	class:ssf_core::SSF_Core
+propagateState	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::propagateState(const double dt)$/;"	f	class:ssf_core::SSF_Core
+pubCorrect_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Publisher pubCorrect_; \/\/\/< publishes corrections for external state propagation$/;"	m	class:ssf_core::SSF_Core
+pubPoseCrtl_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Publisher pubPoseCrtl_; \/\/\/< publishes 6DoF pose including velocity output$/;"	m	class:ssf_core::SSF_Core
+pubPose_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Publisher pubPose_; \/\/\/< publishes 6DoF pose output$/;"	m	class:ssf_core::SSF_Core
+pubState_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Publisher pubState_; \/\/\/< publishes all states of the filter$/;"	m	class:ssf_core::SSF_Core
+q_	ssf_core/include/ssf_core/state.h	/^  Eigen::Quaternion<double> q_;           \/\/\/< attitude                         (6- 9 \/ 6- 8)$/;"	m	class:ssf_core::State
+q_ci_	ssf_core/include/ssf_core/state.h	/^  Eigen::Quaternion<double> q_ci_;        \/\/\/< camera-imu attitude calibration  (21-24 \/ 19-21)$/;"	m	class:ssf_core::State
+q_ci_	ssf_updates/src/pose_measurements.h	/^  Eigen::Quaternion<double> q_ci_; \/\/\/< initial rotation camera-IMU$/;"	m	class:PoseMeasurements
+q_ci_	ssf_updates/src/position_measurements.h	/^	  Eigen::Quaternion<double> q_ci_; \/\/\/< initial rotation camera-IMU$/;"	m	class:PositionMeasurements
+q_cv_	ssf_core/include/ssf_core/measurement.h	/^	Eigen::Quaternion<double> q_cv_;$/;"	m	class:ssf_core::Measurements
+q_int_	ssf_core/include/ssf_core/state.h	/^  Eigen::Quaternion<double> q_int_;       \/\/\/< this is the integrated ang. vel. no corrections applied, to use for delta rot in external algos...$/;"	m	class:ssf_core::State
+q_wv_	ssf_core/include/ssf_core/state.h	/^  Eigen::Quaternion<double> q_wv_;        \/\/\/< vision-world attitude drift      (17-20 \/ 16-18)$/;"	m	class:ssf_core::State
+q_wv_	ssf_updates/src/pose_measurements.h	/^  Eigen::Quaternion<double> q_wv_; \/\/\/< initial rotation wolrd-vision$/;"	m	class:PoseMeasurements
+q_wv_	ssf_updates/src/position_measurements.h	/^	  Eigen::Quaternion<double> q_wv_; \/\/\/< initial rotation wolrd-vision$/;"	m	class:PositionMeasurements
+qbuff_	ssf_core/include/ssf_core/SSF_Core.h	/^  Eigen::Matrix<double, nBuff_, 4> qbuff_;$/;"	m	class:ssf_core::SSF_Core
+quaternionFromSmallAngle	ssf_core/include/ssf_core/eigen_utils.h	/^  Eigen::Quaternion<typename Derived::Scalar> quaternionFromSmallAngle(const Eigen::MatrixBase<Derived> & theta)$/;"	f
+quaternionToMsg	ssf_core/include/ssf_core/eigen_conversions.h	/^  inline geometry_msgs::Quaternion quaternionToMsg(const Eigen::Quaternion<Scalar> & q_in)$/;"	f	namespace:eigen_conversions
+quaternionToMsg	ssf_core/include/ssf_core/eigen_conversions.h	/^  inline void quaternionToMsg(const Eigen::Quaternion<Scalar> & q_in, geometry_msgs::Quaternion & q_out)$/;"	f	namespace:eigen_conversions
+qvw_inittimer_	ssf_core/include/ssf_core/SSF_Core.h	/^  int qvw_inittimer_;$/;"	m	class:ssf_core::SSF_Core
+reconfServer_	ssf_core/include/ssf_core/SSF_Core.h	/^  ReconfigureServer *reconfServer_;$/;"	m	class:ssf_core::SSF_Core
+reconfServer_	ssf_core/include/ssf_core/measurement.h	/^	ReconfigureServer *reconfServer_;$/;"	m	class:ssf_core::Measurements
+registerCallback	ssf_core/include/ssf_core/SSF_Core.h	/^    void registerCallback(void(T::*cb_func)(ssf_core::SSF_CoreConfig& config, uint32_t level), T* p_obj)$/;"	f	class:ssf_core::SSF_Core
+reset	ssf_core/src/state.cpp	/^void State::reset(){$/;"	f	class:ssf_core::State
+skew	ssf_core/include/ssf_core/eigen_utils.h	/^  inline Eigen::Matrix<typename Derived::Scalar, 3, 3> skew(const Eigen::MatrixBase<Derived> & vec)$/;"	f
+ssf_core	ssf_core/include/ssf_core/SSF_Core.h	/^namespace ssf_core{$/;"	n
+ssf_core	ssf_core/include/ssf_core/measurement.h	/^namespace ssf_core{$/;"	n
+ssf_core	ssf_core/include/ssf_core/state.h	/^namespace ssf_core$/;"	n
+ssf_core	ssf_core/src/SSF_Core.cpp	/^namespace ssf_core$/;"	n	file:
+ssf_core	ssf_core/src/measurement.cpp	/^namespace ssf_core{$/;"	n	file:
+ssf_core	ssf_core/src/state.cpp	/^namespace ssf_core$/;"	n	file:
+ssf_core_	ssf_core/include/ssf_core/measurement.h	/^	SSF_Core ssf_core_;$/;"	m	class:ssf_core::Measurements
+stateCallback	ssf_core/src/SSF_Core.cpp	/^void SSF_Core::stateCallback(const sensor_fusion_comm::ExtEkfConstPtr & msg)$/;"	f	class:ssf_core::SSF_Core
+subImu_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Subscriber subImu_; \/\/\/< subscriber to IMU readings$/;"	m	class:ssf_core::SSF_Core
+subMeasurement_	ssf_updates/src/pose_sensor.h	/^  ros::Subscriber subMeasurement_;$/;"	m	class:PoseSensorHandler
+subMeasurement_	ssf_updates/src/position_sensor.h	/^	ros::Subscriber subMeasurement_;$/;"	m	class:PositionSensorHandler
+subState_	ssf_core/include/ssf_core/SSF_Core.h	/^  ros::Subscriber subState_; \/\/\/< subscriber to external state propagation$/;"	m	class:ssf_core::SSF_Core
+subscribe	ssf_updates/src/pose_sensor.cpp	/^void PoseSensorHandler::subscribe()$/;"	f	class:PoseSensorHandler
+subscribe	ssf_updates/src/position_sensor.cpp	/^void PositionSensorHandler::subscribe()$/;"	f	class:PositionSensorHandler
+time_	ssf_core/include/ssf_core/state.h	/^  double time_; \/\/\/< time of this state estimate$/;"	m	class:ssf_core::State
+toExtStateMsg	ssf_core/src/state.cpp	/^void State::toExtStateMsg(sensor_fusion_comm::ExtState & state)$/;"	f	class:ssf_core::State
+toPoseMsg	ssf_core/src/state.cpp	/^void State::toPoseMsg(geometry_msgs::PoseWithCovarianceStamped & pose)$/;"	f	class:ssf_core::State
+toStateMsg	ssf_core/src/state.cpp	/^void State::toStateMsg(sensor_fusion_comm::DoubleArrayStamped & state)$/;"	f	class:ssf_core::State
+use_fixed_covariance_	ssf_updates/src/pose_sensor.h	/^  bool use_fixed_covariance_; \/\/\/< use fixed covariance set by dynamic reconfigure$/;"	m	class:PoseSensorHandler
+use_fixed_covariance_	ssf_updates/src/position_sensor.h	/^	bool use_fixed_covariance_; \/\/\/< use fixed covariance set by dynamic reconfigure$/;"	m	class:PositionSensorHandler
+v_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double, 3, 1> v_;         \/\/\/< velocity                         (3- 5 \/ 3- 5)$/;"	m	class:ssf_core::State
+v_vc_	ssf_core/include/ssf_core/measurement.h	/^	Eigen::Matrix<double, 3, 1> v_vc_;$/;"	m	class:ssf_core::Measurements
+vector3dToPoint	ssf_core/include/ssf_core/eigen_conversions.h	/^  inline Point vector3dToPoint(const Eigen::MatrixBase<Derived> & vec)$/;"	f	namespace:eigen_conversions
+vector3dToPoint	ssf_core/include/ssf_core/eigen_conversions.h	/^  inline void vector3dToPoint(const Eigen::MatrixBase<Derived> & vec, Point & point)$/;"	f	namespace:eigen_conversions
+w_m_	ssf_core/include/ssf_core/state.h	/^  Eigen::Matrix<double,3,1> w_m_;         \/\/\/< angular velocity from IMU$/;"	m	class:ssf_core::State
+z_p_	ssf_updates/src/pose_sensor.h	/^  Eigen::Matrix<double, 3, 1> z_p_; \/\/\/ position measurement camera seen from world$/;"	m	class:PoseSensorHandler
+z_p_	ssf_updates/src/position_sensor.h	/^	Eigen::Matrix<double, 3, 1> z_p_; \/\/\/ position measurement camera seen from world$/;"	m	class:PositionSensorHandler
+z_q_	ssf_updates/src/pose_sensor.h	/^  Eigen::Quaternion<double> z_q_; \/\/\/ attitude measurement camera seen from world$/;"	m	class:PoseSensorHandler
+~MeasurementHandler	ssf_core/include/ssf_core/measurement.h	/^	virtual ~MeasurementHandler() {}$/;"	f	class:ssf_core::MeasurementHandler
+~Measurements	ssf_core/src/measurement.cpp	/^Measurements::~Measurements()$/;"	f	class:ssf_core::Measurements
+~SSF_Core	ssf_core/src/SSF_Core.cpp	/^SSF_Core::~SSF_Core()$/;"	f	class:ssf_core::SSF_Core

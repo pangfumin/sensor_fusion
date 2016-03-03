@@ -1,0 +1,11 @@
+<launch>
+    <node name="ssf_pose_sensor" pkg="ssf_updates" type="ssf_pose_sensor" clear_params="true" output="screen">
+	    <remap from="ssf_core/hl_state_input" to="/mav1/fcu/ekf_state_out" />
+	    <remap from="ssf_core/correction" to="/mav1/fcu/ekf_state_in" />
+
+	    <remap from="ssf_core/pose_measurement" to="/vicon/auk/auk" />
+
+	    <!--<rosparam file="$(find ssf_updates)/pose_sensor_fix.yaml"/> -->
+            
+    </node>
+</launch>

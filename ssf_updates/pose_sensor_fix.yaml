@@ -1,0 +1,51 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  delay: 0.03
+  fixed_bias: false
+  fixed_calib: false
+  fixed_scale: false
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      delay: 0.03
+      fixed_bias: false
+      fixed_calib: false
+      fixed_scale: false
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      height: 1.0
+      id: 0
+      init_filter: false
+      meas_noise1: 0.01
+      meas_noise2: 0.01
+      name: Default
+      noise_acc: 0.0083
+      noise_accbias: 0.00083
+      noise_gyr: 0.0001
+      noise_gyrbias: 0.0019999980000000002
+      noise_pic: 0.0
+      noise_qci: 0.0
+      noise_qwv: 0.0
+      noise_scale: 0.1
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      scale_init: 1.0
+      set_height: false
+      state: true
+      type: ''
+    state: []
+  height: 1.0
+  init_filter: false
+  meas_noise1: 0.01
+  meas_noise2: 0.01
+  noise_acc: 0.0083
+  noise_accbias: 0.00083
+  noise_gyr: 0.0001
+  noise_gyrbias: 0.0019999980000000002
+  noise_pic: 0.0
+  noise_qci: 0.0
+  noise_qwv: 0.0
+  noise_scale: 0.1
+  scale_init: 1.0
+  set_height: false
+state: []
