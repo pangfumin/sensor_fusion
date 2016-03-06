@@ -53,9 +53,13 @@ PoseSensorHandler::PoseSensorHandler(ssf_core::Measurements* meas) :
 void PoseSensorHandler::subscribe()
 {
   ros::NodeHandle nh("ssf_core");
-  //subMeasurement_ = nh.subscribe("pose_measurement", 1, &PoseSensorHandler::measurementCallback, this);
-  subMeasurement_ = nh.subscribe("/vicon/auk/auk", 1, &PoseSensorHandler::measurementCallback, this);
-  
+  subPoseWithCovarianceStamped_ =
+          nh.subscribe< geometry_msgs::PoseWithCovarianceStamped>("pose_with_covariance", 1, &PoseSensorHandler::measurementCallback, this);
+  subTransformStamped_ =
+          nh.subscribe < geometry_msgs::TransformStamped>("pose_transform", 1, &PoseSensorHandler::measurementCallback, this);
+
+  //subMeasurement_ = nh.subscribe("/vicon/auk/auk", 1, &PoseSensorHandler::measurementCallback, this);
+
 
   measurements->ssf_core_.registerCallback(&PoseSensorHandler::noiseConfig, this);
 
@@ -72,8 +76,8 @@ void PoseSensorHandler::noiseConfig(ssf_core::SSF_CoreConfig& config, uint32_t l
   //	}
 }
 
-//void PoseSensorHandler::measurementCallback(const geometry_msgs::PoseWithCovarianceStampedConstPtr & msg)
-void PoseSensorHandler::measurementCallback(const geometry_msgs::TransformStampedConstPtr & msg)
+void PoseSensorHandler::measurementCallback(const geometry_msgs::PoseWithCovarianceStampedConstPtr & msg)
+//void PoseSensorHandler::measurementCallback(const geometry_msgs::TransformStampedConstPtr & msg)
 
 
 {
@@ -91,21 +95,21 @@ void PoseSensorHandler::measurementCallback(const geometry_msgs::TransformStampe
   R.setZero();
 
   // get measurements
-  //z_p_ = Eigen::Matrix<double, 3, 1>(msg->pose.pose.position.x, msg->pose.pose.position.y, msg->pose.pose.position.z);
-  //z_q_ = Eigen::Quaternion<double>(msg->pose.pose.orientation.w, msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z);
+  z_p_ = Eigen::Matrix<double, 3, 1>(msg->pose.pose.position.x, msg->pose.pose.position.y, msg->pose.pose.position.z);
+  z_q_ = Eigen::Quaternion<double>(msg->pose.pose.orientation.w, msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z);
 
-  z_p_ = Eigen::Matrix<double, 3, 1>(msg->transform.translation.x, msg->transform.translation.y, msg->transform.translation.z);
-  z_q_ = Eigen::Quaternion<double>(msg->transform.rotation.w, msg->transform.rotation.x, msg->transform.rotation.y, msg->transform.rotation.z);
+  //z_p_ = Eigen::Matrix<double, 3, 1>(msg->transform.translation.x, msg->transform.translation.y, msg->transform.translation.z);
+  //z_q_ = Eigen::Quaternion<double>(msg->transform.rotation.w, msg->transform.rotation.x, msg->transform.rotation.y, msg->transform.rotation.z);
 
-  /*
+
   // take covariance from sensor
   R.block<6, 6> (0, 0) = Eigen::Matrix<double, 6, 6>(&msg->pose.covariance[0]);
-  //R.block<6, 6> (0, 0) = Eigen::Matrix<double, 6, 6>::Zero();
+
   //clear cross-correlations between q and p
   R.block<3, 3> (0, 3) = Eigen::Matrix<double, 3, 3>::Zero();
   R.block<3, 3> (3, 0) = Eigen::Matrix<double, 3, 3>::Zero();
   R(6, 6) = 1e-6; // q_vw yaw-measurement noise
-  */
+
 
   /*************************************************************************************/
   // use this if your pose sensor is ethzasl_ptam (www.ros.org/wiki/ethzasl_ptam)
@@ -180,3 +184,29 @@ void PoseSensorHandler::measurementCallback(const geometry_msgs::TransformStampe
   // call update step in core class
   measurements->ssf_core_.applyMeasurement(idx, H_old, r_old, R);
 }
+
+
+
+void PoseSensorHandler::measurementCallback(
+    const geometry_msgs::TransformStampedConstPtr & msg) {
+
+  geometry_msgs::PoseWithCovarianceStampedPtr pose(
+      new geometry_msgs::PoseWithCovarianceStamped());
+
+
+  // Fixed covariance will be set in measurement class -> MakeFromSensorReadingImpl.
+  pose->header = msg->header;
+
+  pose->pose.pose.position.x = msg->transform.translation.x;
+  pose->pose.pose.position.y = msg->transform.translation.y;
+  pose->pose.pose.position.z = msg->transform.translation.z;
+
+  pose->pose.pose.orientation.w = msg->transform.rotation.w;
+  pose->pose.pose.orientation.x = msg->transform.rotation.x;
+  pose->pose.pose.orientation.y = msg->transform.rotation.y;
+  pose->pose.pose.orientation.z = msg->transform.rotation.z;
+
+  measurementCallback(pose);
+}
+
+

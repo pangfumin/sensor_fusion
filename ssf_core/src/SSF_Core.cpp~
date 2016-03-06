@@ -52,7 +52,7 @@ SSF_Core::SSF_Core()
   msgState_.data.resize(nFullState_, 0);
 
   //subImu_ = nh.subscribe("imu_state_input", 1 /*N_STATE_BUFFER*/, &SSF_Core::imuCallback, this);
-  subImu_ = nh.subscribe("imu_state_input", 1 /*N_STATE_BUFFER*/, &SSF_Core::imuCallback, this);
+  subImu_ = nh.subscribe("/auk/fcu/imu", 1 /*N_STATE_BUFFER*/, &SSF_Core::imuCallback, this);
 
   subState_ = nh.subscribe("hl_state_input", 1 /*N_STATE_BUFFER*/, &SSF_Core::stateCallback, this);
 

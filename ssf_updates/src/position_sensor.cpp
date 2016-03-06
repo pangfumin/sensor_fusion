@@ -52,8 +52,8 @@ PositionSensorHandler::PositionSensorHandler(ssf_core::Measurements* meas) :
 void PositionSensorHandler::subscribe()
 {
 	ros::NodeHandle nh("ssf_core");
-	subMeasurement_ = nh.subscribe("position_measurement", 1, &PositionSensorHandler::measurementCallback, this);
-
+    subMeasurement_ = nh.subscribe("position_measurement", 1, &PositionSensorHandler::measurementCallback, this);
+    //subTransformStamped_ = nh.subscribe("position_measurement", 1, &PositionSensorHandler::measurementCallback, this);
 	measurements->ssf_core_.registerCallback(&PositionSensorHandler::noiseConfig, this);
 
 	nh.param("meas_noise1",n_zp_,0.0001);	// default position noise for laser tracker total station
