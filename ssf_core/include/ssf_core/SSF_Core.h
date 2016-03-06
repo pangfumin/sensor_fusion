@@ -48,6 +48,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <vector>
 #include <ssf_core/state.h>
+#include<tf/transform_broadcaster.h>
 
 #define N_STATE_BUFFER 256	///< size of unsigned char, do not change!
 #define HLI_EKF_STATE_SIZE 16 	///< number of states exchanged with external propagation. Here: p,v,q,bw,bw=16
@@ -141,6 +142,9 @@ private:
 
   ros::Subscriber subState_; ///< subscriber to external state propagation
   ros::Subscriber subImu_; ///< subscriber to IMU readings
+
+  // Transfor broadcaster (for visualization in rviz)
+  tf::TransformBroadcaster mTfBr;
 
   sensor_fusion_comm::ExtEkf hl_state_buf_; ///< buffer to store external propagation data
 

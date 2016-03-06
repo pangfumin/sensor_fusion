@@ -230,10 +230,14 @@ std::cout<<"2"<<std::endl;
   StateBuffer_[(unsigned char)(idx_state_ - 1)].toPoseMsg(msgPose_);
   pubPose_.publish(msgPose_);
 
+  tf::Transform tfTcw;
+  tfTcw.setIdentity();
+  mTfBr.sendTransform(tf::StampedTransform(tfTcw,msg->header.stamp, "world", "state"));
+
   msgPoseCtrl_.header = msgPose_.header;
   StateBuffer_[(unsigned char)(idx_state_ - 1)].toExtStateMsg(msgPoseCtrl_);
   pubPoseCrtl_.publish(msgPoseCtrl_);
-std::cout<<"3"<<std::endl;
+  std::cout<<"3"<<std::endl;
   seq++;
 }
 
@@ -660,6 +664,7 @@ bool SSF_Core::applyCorrection(unsigned char idx_delaystate, const ErrorState & 
   msgState_.header = msgCorrect_.header;
   StateBuffer_[idx].toStateMsg(msgState_);
   pubState_.publish(msgState_);
+
   seq_m++;
 
   return 1;
