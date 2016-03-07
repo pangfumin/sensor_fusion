@@ -219,9 +219,9 @@ void SSF_Core::imuCallback(const sensor_msgs::ImuConstPtr & msg)
   propagateState(StateBuffer_[idx_state_].time_ - StateBuffer_[(unsigned char)(idx_state_ - 1)].time_);
   std::cout<<"predictProcessCovariance"<<std::endl;
   predictProcessCovariance(StateBuffer_[idx_P_].time_ - StateBuffer_[(unsigned char)(idx_P_ - 1)].time_);
-std::cout<<"1"<<std::endl;
+
   checkForNumeric((double*)(&StateBuffer_[idx_state_ - 1].p_[0]), 3, "prediction p");
-std::cout<<"2"<<std::endl;
+
   predictionMade_ = true;
 
   msgPose_.header.stamp = msg->header.stamp;
@@ -230,14 +230,26 @@ std::cout<<"2"<<std::endl;
   StateBuffer_[(unsigned char)(idx_state_ - 1)].toPoseMsg(msgPose_);
   pubPose_.publish(msgPose_);
 
-  tf::Transform tfTcw;
-  tfTcw.setIdentity();
-  mTfBr.sendTransform(tf::StampedTransform(tfTcw,msg->header.stamp, "world", "state"));
+  //msgPose_.pose.position
+  tf::Quaternion q(msgPose_.pose.pose.orientation.x,
+                   msgPose_.pose.pose.orientation.y,
+                   msgPose_.pose.pose.orientation.z,
+                   msgPose_.pose.pose.orientation.w);
+  //q.= msgPose_.pose.orientation.x
+  tf::Matrix3x3 M(q);
+  tf::Vector3 V(msgPose_.pose.pose.position.x,
+                msgPose_.pose.pose.position.y,
+                msgPose_.pose.pose.position.z);
+
+  tf::Transform tfT(M,V);
+  //tfT.setIdentity();
+
+  mTfBr.sendTransform(tf::StampedTransform(tfT,msgPose_.header.stamp, "world", "state"));
 
   msgPoseCtrl_.header = msgPose_.header;
   StateBuffer_[(unsigned char)(idx_state_ - 1)].toExtStateMsg(msgPoseCtrl_);
   pubPoseCrtl_.publish(msgPoseCtrl_);
-  std::cout<<"3"<<std::endl;
+
   seq++;
 }
 
