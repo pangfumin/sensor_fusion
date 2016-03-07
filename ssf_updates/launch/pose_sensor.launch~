@@ -1,6 +1,6 @@
 <launch>
     <node name="ssf_pose_sensor" pkg="ssf_updates" type="ssf_pose_sensor" clear_params="true" output="screen">
-	    <remap from="ssf_core/imu_state_input" to="/imu0" />
+	    <remap from="ssf_core/imu_state_input" to="//auk/fcu/imu" />
 	    <remap from="ssf_core/pose_transform" to="/vicon/auk/auk" />
 
 	    <!--<rosparam file="$(find ssf_updates)/pose_sensor_fix.yaml"/> -->
